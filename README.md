@@ -4,6 +4,8 @@
 
 # API used
 
+Rick and morty API(https://rickandmortyapi.com/)
+
 # What does the app do?
 
 linkToLiveDemo? review (assignment): assignGrade (1);
