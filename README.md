@@ -1,12 +1,34 @@
 # Web App From Scratch 
 
-[live linkk]()
+[live linkk](https://countnick.github.io/web-app-from-scratch-1920/)
 
 # API used
 
-Rick and morty API(https://rickandmortyapi.com/)
+[Rick and morty API](https://rickandmortyapi.com/)
+
+## Downsides
+
+* The api has a maximum call rate of 100000 requests per day
+
+* The information on characters is a little shallow, there are no bio's for the characters etc. 
+
+# Design patterns
+
+as for now:
+
+* Lazy loading 
+
+want to implement:
+
+breadcrumb trails
+Search functionality
 
 # What does the app do?
+
+The app fetches data from the Rcik and morty API and renders a card for every character. Users can click on these cards, which will lead them to a detailpage about the character. The detail page holds additional information like: 
+
+* Character species
+* Which planet the character is from 
 
 linkToLiveDemo? review (assignment): assignGrade (1);
 What does your app do, what is the goal? (passing butter)
