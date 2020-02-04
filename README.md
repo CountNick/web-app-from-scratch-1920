@@ -1,5 +1,7 @@
 # Web App From Scratch 
 
+![Jaar2](https://user-images.githubusercontent.com/47485018/73750395-64639580-475d-11ea-8e5b-65df65fe5064.png)
+
 [live linkk](https://countnick.github.io/web-app-from-scratch-1920/)
 
 # API used
@@ -21,7 +23,7 @@ as for now:
 want to implement:
 
 breadcrumb trails
-Search functionality
+Search functionality   
 
 # What does the app do?
 
