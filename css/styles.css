@@ -34,3 +34,11 @@ section{
   border-style: solid;
   border-color: red;
 }
+
+button{
+  padding: 1rem;
+  background-color: #7ce60f;
+  border-radius: .2rem;
+  font-size: 1rem;
+  color: #4cadca;
+}
