@@ -1,6 +1,3 @@
-
-
-
 const endpoint = `https://rickandmortyapi.com/api/character/`
 
 
@@ -36,7 +33,9 @@ function renderCharacters(data){
                 .then(data => renderCharacters(data));
         }
     }
-    
+
+    // main.insertBefore(loadButton, loadButton)
+
     loadButton.addEventListener('click', getNext)
 }
 
