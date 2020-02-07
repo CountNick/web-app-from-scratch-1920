@@ -1,4 +1,8 @@
-const endpoint = `https://rickandmortyapi.com/api/character/`
+let searchInput = '?name=morty';
+
+const endpoint = `https://rickandmortyapi.com/api/character/${searchInput}`
+
+console.log(endpoint)
 
 
 fetch(endpoint)
@@ -12,7 +16,8 @@ function renderCharacters(data){
     const loadButton = document.querySelectorAll('button')[0];
     const main = document.querySelectorAll('main')[0];
 
-    data.results.forEach(element => {
+    data.results  
+    .forEach(element => {
         //resource: https://www.myhowtoonline.com/how-to-create-an-h1-element-with-javascript/
         // console.log(element)
         
@@ -25,6 +30,17 @@ function renderCharacters(data){
 
     });
 
+    function liveSearch(){
+
+        // let inputFilter = document.querySelectorAll('input')[0]
+
+        inputFilter.addEventListener('keyup', function(){
+            let value = this.value, i;
+        })
+        
+
+    }
+    
     function getNext(){
         loadButton.removeEventListener('click', getNext)
         if(data.info.next !== null) {
