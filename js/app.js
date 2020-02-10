@@ -1,16 +1,33 @@
+"use strict";
+
 
 let userInput = ``;
 
 const endpoint = `https://rickandmortyapi.com/api/character/`
+
 
 let inputFilter = document.querySelectorAll('input')[0]
 
 fetch(endpoint)
     .then(res => res.json())
     .then(data => renderCharacters(data))
+    
+
+    routie({
+        '': () => {
+          console.log('home');
+        },
+        'character/:id': (id) => {
+          console.log(id);
+        }
+      });
 
 
 function renderCharacters(data){
+
+    // console.log(data)
+
+
 
     const loadButton = document.querySelectorAll('button')[0];
     const main = document.querySelectorAll('main')[0];
@@ -27,7 +44,13 @@ function renderCharacters(data){
         let section = document.createElement('section')
 
         section
-        .insertAdjacentHTML('afterbegin', `<img src=${element.image}> <h1>${element.name}</h1> <p>${element.status}</p>`)
+        .insertAdjacentHTML('afterbegin', ` <a href=#character/:${element.id}><img src=${element.image}> <h1>${element.name}</h1> <p>${element.status}</p> </a>`);
+
+        section.setAttribute('id', element.id)
+        
+        // section.addEventListener('click', function(){
+        //     console.log(element.id)
+        // })
 
         main.appendChild(section)
 
