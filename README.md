@@ -30,7 +30,11 @@ Search functionality
 
 # Actor diagram
 
-![actorDiagram](https://i.imgur.com/1jA4g1S.png)
+![actorDiagram](https://i.imgur.com/on3F5KJ.png)
+
+# Interaction Diagram
+
+![interaction](https://i.imgur.com/e0XztH0.png)
 
 # What does the app do?
 

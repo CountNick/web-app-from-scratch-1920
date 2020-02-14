@@ -8,25 +8,56 @@ const endpoint = `https://rickandmortyapi.com/api/character/`
 let inputFilter = document.querySelectorAll('input')[0]
 const main = document.querySelectorAll('main')[0];
 
+// async function getData(){
+//     let pagesReq = 0;
+
+//     let processedResponses = []
+
+//     fetch(endpoint)
+//         .then(res => res.json())
+//         .then(jsonData => {
+//             const apiPromises = []
+//             pagesReq = jsonData.info.pages
+
+//             for(let i = pagesReq; i>0; i--){
+//                 apiPromises.push(fetch(endpoint + `?page=${i}`))
+//             }
+            
+//             Promise.all(apiPromises)
+//                 .then(responses => {
+//                     responses.map(response => response.json()
+//                     .then(data => processedResponses.push(data))
+// )                    
+//                 });
+                
+//         })
+//         return processedResponses
+// }
+
+// getData()
+//     .then(ola => console.log(ola))
+
+console.log(mustache("Hello {{name}}!", {name: "world"}))
+
 fetch(endpoint)
     .then(res => res.json())
     .then(data => {
         //initiate router
         routie({
             '': () => {
-              renderCharacters(data);
+              renderAllCharacters(data);
             },
             'about': () => {
                 console.log('about')
             },
             'character/:name': (id) => {
-              renderDetail(id, data)
+              renderCharacterDetail(id, data)
             }
           });
     })
     .catch(err => console.error(err))
 
-function renderCharacters(data){
+function renderAllCharacters(data){
 
     const loadButton = document.querySelectorAll('button')[0];
     
@@ -38,20 +69,28 @@ function renderCharacters(data){
     .includes(userInput.toLowerCase()))  
     .forEach(element => {
         //resource: https://www.myhowtoonline.com/how-to-create-an-h1-element-with-javascript/
-        // console.log(element)
-        
-        // console.log(element)
 
         let section = document.createElement('section')
 
-        section
-        .insertAdjacentHTML('afterbegin', ` <a href=#character/:${element.id}><img src=${element.image}> <h1>${element.name}</h1></a>`);
-
-        section.setAttribute('id', element.id)
+        // section
+        // .insertAdjacentHTML('afterbegin',
+        // `<a href=#character/:${element.id}>
+        // <img src=${element.image}>
+        // <h1>${element.name}</h1>
+        // </a>`);
         
-        // section.addEventListener('click', function(){
-        //     console.log(element.id)
-        // })
+        // console.log(mustache("{{#section}} {{/section}}"))
+        let characterTemplate = mustache("<a href=#character/:{{id}}><img src={{image}}> <h1>{{name}}</h1> </a>", element)
+
+        // let output = Mustache.render("<a href=#character/:{{id}}> <img src={{image}}> <h1>{{name}}</h1> </a>", element)
+
+        section.innerHTML = characterTemplate
+
+        
+        
+
+        //gives each section 
+        section.setAttribute('id', element.id)
 
         main.appendChild(section)
 
@@ -64,9 +103,15 @@ function searchCharacters(event){
     inputFilter.removeEventListener('input', searchCharacters)
     userInput =  event.target.value;
 
-    renderCharacters(data)
+    renderAllCharacters(data)
 
     //https://www.florin-pop.com/blog/2019/06/vanilla-javascript-instant-search/
+}
+
+function removeCharacters(){
+    
+    main.removeChild()
+
 }
     
     function getNext(){
@@ -84,12 +129,11 @@ function searchCharacters(event){
 
 }
 
-function renderDetail(id, data){
+function renderCharacterDetail(id, data){
 
     main.textContent = ''
 
     id = +id.substring(1);
-
     
     let section = document.createElement('section')
 
@@ -97,13 +141,19 @@ function renderDetail(id, data){
 
    console.log(result)
 
-   section.insertAdjacentHTML('afterbegin', `<img src=${result.image}> <h1>${result.name}</h1> <p>Status: ${result.status}</p>
-   <p>Species: ${result.species}</p>
-   <p>Gender: ${result.gender}</p>
-   <p>Origin: ${result.origin.name}</p>
-   <p>Lives in: ${result.location.name}</p>
-   
-   `)
+//    section.insertAdjacentHTML('afterbegin', `<img src=${result.image}> <h1>${result.name}</h1> <p>Status: ${result.status}</p>
+//    <p>Species: ${result.species}</p>
+//    <p>Gender: ${result.gender}</p>
+//    <p>Origin: ${result.origin.name}</p>
+//    <p>Lives in: ${result.location.name}</p>
+//    `)
+
+
+   let characterTemplate = mustache("<img src={{image}} <h1>{{name}}</h1> <p>Species: {{species}}</p><p>Gender: {{gender}}</p><p>Origin: {{origin.name}}</p> <p>Lives in: {{species}}</p>", result)
+
+   section.innerHTML = characterTemplate
+
 
     main.appendChild(section)
 }
+
