@@ -22,6 +22,10 @@ as for now:
 
 * Live search function
 
+* No global variables
+
+* USe tabs to indent code
+
 
 want to implement:
 
@@ -43,6 +47,8 @@ The app fetches data from the Rick and morty API and renders a card for every ch
 * Character species
 * Which planet the character is from 
 
+![OVerview](https://i.imgur.com/fSGFwMp.png)
+![Detail](https://i.imgur.com/EuPWK6m.png)
 
 
 [Rubric](https://docs.google.com/spreadsheets/d/e/2PACX-1vTjZGWGPC_RMvTMry8YW5XOM79GEIdgS7I5JlOe6OeeOUdmv7ok1s9jQhzojNE4AsyzgL-jJCbRj1LN/pubhtml?gid=0&single=true)
