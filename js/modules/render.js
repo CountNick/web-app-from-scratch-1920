@@ -1,6 +1,12 @@
+import { Data } from './data.js'
+
 export const Render = {
   allCharacters: (data, userInput) => {
     const homeSection = document.querySelector(".home");
+
+    //remove the loading page
+    const loading = document.querySelectorAll('article')[0];
+    loading.classList.add('loaded')
 
     Render.removeCharacters(homeSection);
     // Initialize search function
@@ -10,31 +16,39 @@ export const Render = {
     const nextButton = document.getElementById("nextButton");
     const previousButton = document.getElementById("previousButton");
 
-    let currPage = document.getElementById("current-page");
+    const currPage = document.getElementById("current-page");
     const totalPages = document.getElementById("total-pages");
-
-    // console.log(Render.paginate(data, 10, 1))
 
     // resource ternary operator: https://stackoverflow.com/questions/19271755/is-there-an-alternative-to-using-if-else-statements
     // Check if userInput is undefined, if so set userInput to empty string, otherwise use value given by the user and remove unneccessary characters
     userInput = userInput == undefined ? (userInput = "") : userInput;
 
-    const filteredData = data.filter(character =>
-      character.name.toLowerCase().includes(userInput.toLowerCase())
-    );
+    const filteredData = Data.filter(data, userInput)
     //Guido helped me do this
 
     let pageNr = 1;
 
     function nextPage() {
     Render.removeCharacters(homeSection)
-      pageNr += 1;
+
+    if(pageNr == 50 ){
+        pageNr = 50
+    }else{
+        pageNr+= 1
+    }
       pagination(pageNr)
     }
 
     function previousPage() {
     Render.removeCharacters(homeSection)
-      pageNr--;
+    
+    if(pageNr == 1 ){
+        pageNr = 1
+    }else{
+        pageNr--;
+    }
+    
+    
       pagination(pageNr)
         
     }
@@ -117,8 +131,6 @@ export const Render = {
     // find the character from the dataset which id matches the id in the url
     const result = data.find(character => character.id === id);
 
-    console.log(result);
-
     // Inject a img, h1, p, etc. into the section and fill these with the found character's data
     article.insertAdjacentHTML(
       "afterbegin",
@@ -158,5 +170,16 @@ export const Render = {
       next_page: total_pages > page ? page + 1 : null,
       data: paginatedItems
     };
-  }
+  },
+  loading: ( () => {
+    
+    const main = document.querySelectorAll('main')[0]
+
+      const loading = document.createElement('article')
+
+      loading.classList.add('loading')
+
+      loading.insertAdjacentHTML('afterbegin', `<img src = ${'../img/load.gif'}> <h1>Loading</h1>`)
+      main.appendChild(loading)
+  })
 };
