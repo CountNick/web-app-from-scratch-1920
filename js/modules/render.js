@@ -176,7 +176,7 @@ export const Render = {
 
       loading.classList.add('loading')
 
-      loading.insertAdjacentHTML('afterbegin', '<img src ="../../public/img/load.gif"> <h1>Loading</h1>')
+      loading.insertAdjacentHTML('afterbegin', '<img src ="./public/img/load.gif"> <h1>Loading</h1>')
       main.appendChild(loading)
   })
 };
