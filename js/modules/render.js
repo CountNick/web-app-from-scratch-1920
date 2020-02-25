@@ -46,11 +46,8 @@ export const Render = {
         pageNr = 1
     }else{
         pageNr--;
-    }
-    
-    
-      pagination(pageNr)
-        
+    }   
+      pagination(pageNr)   
     }
 
     nextButton.addEventListener("click", nextPage)
@@ -179,7 +176,7 @@ export const Render = {
 
       loading.classList.add('loading')
 
-      loading.insertAdjacentHTML('afterbegin', `<img src = ${'../img/load.gif'}> <h1>Loading</h1>`)
+      loading.insertAdjacentHTML('afterbegin', `<img src = ${'.../img/load.gif'}> <h1>Loading</h1>`)
       main.appendChild(loading)
   })
 };
