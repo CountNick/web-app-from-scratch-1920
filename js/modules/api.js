@@ -24,7 +24,15 @@ export const API = {
         allCharacterData.push(parseJson)
     }
     // return the complete array of characters
+
+    // localStorage.setItem('saveData', JSON.stringify(allCharacterData))
+
+    // let retrieveData = JSON.parse(localStorage.getItem('saveData'))
+
+    // console.log('local: ', retrieveData)
+
     return allCharacterData.reverse()
+
     }),
     transformData: ( (data) => {
             // Make a new array;

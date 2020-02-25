@@ -4,17 +4,24 @@
 
 [live linkk](https://countnick.github.io/web-app-from-scratch-1920/)
 
-# API used
+## Table of contents
+
+* API
+* Design patterns
+* Actor diagram
+* Interaction diagram
+
+## API used
 
 [Rick and morty API](https://rickandmortyapi.com/)
 
-## Downsides
+### Downsides
 
 * The api has a maximum call rate of 100000 requests per day, this seems like a lot but when you get caught in a infinite loop you might exceed your request rate very quickly
 
 * The information on characters is a little shallow, there are no bio's for the characters etc. 
 
-# Design patterns
+## Design patterns
 
 as for now:
 
@@ -32,23 +39,31 @@ want to implement:
 breadcrumb trails
 Search functionality   
 
-# Actor diagram
+## Actor diagram
 
 ![actorDiagram](https://i.imgur.com/on3F5KJ.png)
 
-# Interaction Diagram
+## Interaction Diagram
 
 ![interaction](https://i.imgur.com/e0XztH0.png)
 
-# What does the app do?
+## Functionalities
 
 The app fetches data from the Rick and morty API and renders a card for every character. Users can click on these cards, which will lead them to a detailpage about the character. The detail page holds additional information like: 
 
 * Character species
 * Which planet the character is from 
 
+On the overview page users can also type the name of a character in a searchbox which results in a live search
+
 ![OVerview](https://i.imgur.com/fSGFwMp.png)
 ![Detail](https://i.imgur.com/EuPWK6m.png)
+
+## Acknowledgements
+
+* [Mohammed](https://github.com/MohamadAlGhorani) for helping me impelement the routing example:
+
+* [Florin Pop](https://www.florin-pop.com/blog/2019/06/vanilla-javascript-instant-search/) for the instant live search functionality
 
 
 [Rubric](https://docs.google.com/spreadsheets/d/e/2PACX-1vTjZGWGPC_RMvTMry8YW5XOM79GEIdgS7I5JlOe6OeeOUdmv7ok1s9jQhzojNE4AsyzgL-jJCbRj1LN/pubhtml?gid=0&single=true)
