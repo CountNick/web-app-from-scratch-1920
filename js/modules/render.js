@@ -176,7 +176,7 @@ export const Render = {
 
       loading.classList.add('loading')
 
-      loading.insertAdjacentHTML('afterbegin', `<img src = ${'https://github.com/CountNick/web-app-from-scratch-1920/blob/master/img/load.gif'}> <h1>Loading</h1>`)
+      loading.insertAdjacentHTML('afterbegin', '<img src ="../img/load.gif"> <h1>Loading</h1>')
       main.appendChild(loading)
   })
 };
