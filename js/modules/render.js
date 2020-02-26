@@ -4,12 +4,9 @@ export const Render = {
   allCharacters: (data, userInput) => {
     const homeSection = document.querySelector(".home");
 
-    //remove the loading page
-    const loading = document.querySelectorAll('article')[0];
-    loading.classList.add('loaded')
+    Render.removeLoading()
 
     Render.removeCharacters(homeSection);
-    // Initialize search function
 
     Render.updateUI("home");
 
@@ -81,8 +78,9 @@ export const Render = {
         homeSection.appendChild(article);
       });
     }
-
+    // Initialize search function
     Render.search(data, userInput);
+    //render when no character is found
     Render.noSearchResults(homeSection, userInput);
   },
   removeCharacters: section => {
@@ -107,6 +105,7 @@ export const Render = {
     }
   },
   updateUI: route => {
+    // got this piece of code from joost's example at https://github.com/cmda-minor-web/web-app-from-scratch-1920/blob/master/examples/routing-fetching-templating/static/js/app.js#L24
     const sections = document.querySelectorAll("main section");
     sections.forEach(section => {
       section.classList.remove("active");
@@ -178,5 +177,10 @@ export const Render = {
 
       loading.insertAdjacentHTML('afterbegin', '<img src ="./public/img/load.gif"> <h1>Loading</h1>')
       main.appendChild(loading)
+  }),
+  removeLoading: ( () => {
+    //remove the loading page
+    const loading = document.querySelectorAll('article')[0];
+    loading.classList.add('loaded')
   })
 };
