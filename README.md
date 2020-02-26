@@ -63,7 +63,27 @@ On the overview page users can also type the name of a character in a searchbox 
 
 * [Mohammed](https://github.com/MohamadAlGhorani) for helping me impelement the routing example:
 
-* [Florin Pop](https://www.florin-pop.com/blog/2019/06/vanilla-javascript-instant-search/) for the instant live search functionality
+* [Florin Pop](https://www.florin-pop.com/blog/2019/06/vanilla-javascript-instant-search/) for the instant live search functionality, especially the filter part: 
+```js
+
+```
+
+* [Joost]() For the update ui routing function:
+```js
+// update UI from route (hashchange)
+function updateUI(route) {
+  sections.forEach(section => {
+    section.classList.remove('active');
+  });
+  activeSection = document.querySelector(`[data-route=${route}]`);
+  console.log(activeSection);
+  activeSection.classList.add('active');
+}
+```
+
+* [Guido]()
+
+* [Robin]()
 
 
 [Rubric](https://docs.google.com/spreadsheets/d/e/2PACX-1vTjZGWGPC_RMvTMry8YW5XOM79GEIdgS7I5JlOe6OeeOUdmv7ok1s9jQhzojNE4AsyzgL-jJCbRj1LN/pubhtml?gid=0&single=true)
