@@ -1,3 +1,5 @@
+import { Data } from './data.js'
+
 export const API = {
     getData: (async () => {
     //resources used: 
@@ -24,23 +26,10 @@ export const API = {
         allCharacterData.push(parseJson)
     }
     // return the complete array of characters
+    
+    // console.log(Data.save(allCharacterData))
+    
+    return allCharacterData.reverse() 
 
-    // localStorage.setItem('saveData', JSON.stringify(allCharacterData))
-
-    // let retrieveData = JSON.parse(localStorage.getItem('saveData'))
-
-    // console.log('local: ', retrieveData)
-
-    return allCharacterData.reverse()
-
-    }),
-    transformData: ( (data) => {
-            // Make a new array;
-    const allCharacters = data.map(d => {
-        // Only return the resulsta as this is the data I will be using to make the application
-        return d.results
-    }).flat()
-    // Return the new array
-    return allCharacters
     })
 }

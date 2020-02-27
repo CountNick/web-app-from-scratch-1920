@@ -1,7 +1,7 @@
 import { Data } from './data.js'
 
 export const Render = {
-  allCharacters: (data, userInput) => {
+  allCharacters: ( (data, userInput) => {
     const homeSection = document.querySelector(".home");
 
     Render.removeLoading()
@@ -54,7 +54,7 @@ export const Render = {
     pagination(pageNr)
 
     function pagination(num) {
-        let paginatedData = Render.paginate(filteredData, 10, num);
+        let paginatedData = Data.paginateData(filteredData, 10, num);
         currPage.textContent = paginatedData.page;
         totalPages.textContent = paginatedData.total_pages;
 
@@ -82,13 +82,13 @@ export const Render = {
     Render.search(data, userInput);
     //render when no character is found
     Render.noSearchResults(homeSection, userInput);
-  },
-  removeCharacters: section => {
+  }),
+  removeCharacters: ( (section) => {
     //resource used: https://medium.com/front-end-weekly/remove-all-children-of-the-node-in-javascript-968ad8f120eb
     // Remove all characters from the DOM
     section.querySelectorAll("*").forEach(character => character.remove());
-  },
-  search: (data, userInput) => {
+  }),
+  search: ( (data, userInput) => {
     // Selects the input from the DOM
     let searchBar = document.querySelectorAll("input")[0];
     // Adds an input event to the searchbar, and fires the searchCharacters function
@@ -103,8 +103,8 @@ export const Render = {
       Render.allCharacters(data, userInput);
       //https://www.florin-pop.com/blog/2019/06/vanilla-javascript-instant-search/
     }
-  },
-  updateUI: route => {
+  }),
+  updateUI: ( (route) => {
     // got this piece of code from joost's example at https://github.com/cmda-minor-web/web-app-from-scratch-1920/blob/master/examples/routing-fetching-templating/static/js/app.js#L24
     const sections = document.querySelectorAll("main section");
     sections.forEach(section => {
@@ -113,8 +113,8 @@ export const Render = {
     const activeSection = document.querySelector(`[data-route=${route}]`);
     console.log(activeSection);
     activeSection.classList.add("active");
-  },
-  characterDetail: (id, data) => {
+  }),
+  characterDetail: ( (id, data) => {
     Render.updateUI("details");
 
     const detailsSection = document.querySelector(".details");
@@ -141,32 +141,14 @@ export const Render = {
     );
     // Append the section to the main tag in the DOM
     detailsSection.appendChild(article);
-  },
-  noSearchResults: (section, userInput) => {
+  }),
+  noSearchResults: ( (section, userInput) => {
     if (section.hasChildNodes() <= 0) {
       let h1 = document.createElement("h1");
       h1.textContent = `no characters found with ${userInput}`;
       section.appendChild(h1);
     }
-  },
-  paginate: (array, page_size, page_number) => {
-    const total_pages = Math.ceil(array.length / page_size);
-    const paginatedItems = array.slice(
-      (page_number - 1) * page_size,
-      page_number * page_size
-    );
-    let page = page_number;
-
-    return {
-      page: page_number,
-      total: array.length,
-      total_pages: total_pages,
-      per_page: page_size,
-      prev_page: page - 1 ? page - 1 : null,
-      next_page: total_pages > page ? page + 1 : null,
-      data: paginatedItems
-    };
-  },
+  }),
   loading: ( () => {
     
     const main = document.querySelectorAll('main')[0]

@@ -41,11 +41,11 @@ Search functionality
 
 ## Actor diagram
 
-![actorDiagram](https://i.imgur.com/on3F5KJ.png)
+![actorDiagram](https://i.imgur.com/ll901L3.png)
 
 ## Interaction Diagram
 
-![interaction](https://i.imgur.com/e0XztH0.png)
+![interaction](https://i.imgur.com/G2rmiNm.png)
 
 ## Functionalities
 
