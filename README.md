@@ -9,7 +9,12 @@
 * API
 * Design patterns
 * Actor diagram
+* Wish list
 * Interaction diagram
+* Functionalities
+* Installation
+* Acknowledgements
+* Installation
 
 ## API used
 
@@ -176,3 +181,19 @@ function updateUI(route) {
         }
       })
 ```
+
+## Installation
+
+*__Note__ in order to run this project locally you need some kind of local server to start it up. I used the [liveServer](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension in VS Code
+
+Open up terminal, and type: 
+
+```
+git clone https://github.com/CountNick/web-app-from-scratch-1920.git
+```
+
+```
+cd web-app-from-scratch-1920
+```
+
+Open up the folder in VS code and start live server. The app will now be running on localhost:5500
