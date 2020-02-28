@@ -1,5 +1,3 @@
-import { Data } from './data.js'
-
 export const API = {
     getData: (async () => {
     //resources used: 

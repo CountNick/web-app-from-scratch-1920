@@ -10,11 +10,10 @@ export const Router = {
     
         routie({
             '': () => {
-                
                 Render.allCharacters(transformedData)             
             },
             'character/:id': (id) => {
-                Render.characterDetail(id, transformedData)    
+                Render.characterDetail(id, transformedData)   
             }
         })
       })

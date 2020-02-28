@@ -12,7 +12,7 @@ export const Data = {
         return d.results
     }).reduce( (concatenatedArray, originalArray) => {
         // Concatenate each array into one array
-        return concatenatedArray.concat(originalArray);
+        return concatenatedArray.concat(originalArray)
     })
     // Return the new array
     return allCharacters
@@ -23,7 +23,7 @@ export const Data = {
           (page_number - 1) * page_size,
           page_number * page_size
         );
-        let page = page_number;
+        let page = page_number
     
         return {
           page: page_number,
