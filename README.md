@@ -6,15 +6,14 @@
 
 ## Table of contents
 
-* API
-* Design patterns
-* Actor diagram
-* Wish list
-* Interaction diagram
-* Functionalities
-* Installation
-* Acknowledgements
-* Installation
+* ### [API](https://github.com/CountNick/web-app-from-scratch-1920#api-used)
+* ### [Design patterns](https://github.com/CountNick/web-app-from-scratch-1920#design-patterns)
+* ### [Wish list](https://github.com/CountNick/web-app-from-scratch-1920#wanted-to-implement)
+* ### [Actor diagram](https://github.com/CountNick/web-app-from-scratch-1920#actor-diagram)
+* ### [Interaction diagram](https://github.com/CountNick/web-app-from-scratch-1920#interaction-diagram)
+* ### [Functionalities](https://github.com/CountNick/web-app-from-scratch-1920#functionalities)
+* ### [Acknowledgements](https://github.com/CountNick/web-app-from-scratch-1920#functionalities)
+* ### [Installation](https://github.com/CountNick/web-app-from-scratch-1920#installation)
 
 ## API used
 
