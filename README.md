@@ -4,6 +4,8 @@
 
 [live link](https://countnick.github.io/web-app-from-scratch-1920/)
 
+![screenshot](https://i.imgur.com/PLt9A8j.png)
+
 ## Table of contents
 
 * ### [API](https://github.com/CountNick/web-app-from-scratch-1920#api-used)
